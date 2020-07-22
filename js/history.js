@@ -20,7 +20,7 @@ function dataStorge(currentOperand = '', previousOperand = '', operation = '', c
         let id = this.id.slice(8,9);
         calculator.clear();
         calculator.updateDisplay();
-        calculator.currentOperand = index["computation"];
+        calculator.currentOperand = index["computation"].toString();
         calculator.updateDisplay();
         closeNav();
     };
