@@ -1,0 +1,67 @@
+.navbar {
+    background-color: transparent;
+    position: fixed;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    width: auto;
+    display: grid;
+    overflow: hidden;
+    grid-template-columns: repeat(50, 1fr);
+    height: 5rem;
+}
+
+.calcName {
+    float: right;
+    font-size: 2em;
+    margin: auto;
+    color: white;
+}
+
+.nav-icon {
+    margin: 1em;
+    width: 40px;
+    cursor: pointer;
+}
+  
+.nav-icon:after, 
+.nav-icon:before, 
+.nav-icon .menu {
+    background-color: white;
+    border-radius: 3px;
+    content: '';
+    display: block;
+    height: 5px;
+    margin: 7px 0;
+    transition: all .5s ease-in-out;
+}
+
+
+.nav-icon:hover:before {
+    transform: translateY(12px) rotate(135deg);
+}
+
+.nav-icon:hover:after {
+    transform: translateY(-12px) rotate(-135deg);
+}
+
+.nav-icon:hover div {
+    transform: scale(0);
+}
+
+.historyBtn {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: column;
+    grid-column: span 48;
+}
+
+.historyBtn > svg {
+    fill: white;
+    cursor: pointer;
+    padding-right: 1rem;
+    height: 5rem;
+    width: 4rem;
+}
