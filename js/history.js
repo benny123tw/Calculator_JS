@@ -16,41 +16,52 @@ function dataStorge(currentOperand = '', previousOperand = '', operation = '', c
     historyDiv = document.createElement("div");
     historyDiv.id = "history_" + id;
     historyDiv.className = "history";
+    historyDiv.onclick = function () {
+        let id = this.id.slice(8,9);
+        calculator.clear();
+        calculator.updateDisplay();
+        calculator.currentOperand = index["computation"];
+        calculator.updateDisplay();
+        closeNav();
+    };
 
-    prev = document.createElement("p");
-    prev.className = "history-previous-operand";
-    prev.textContent = obj.table[id]["prev"];
-    document.getElementById("mySidenav").appendChild(historyDiv).appendChild(prev);
+    let index = obj.table[id];
 
-    operation = document.createElement("p");
-    operation.className = "history-operation";
-    operation.textContent = obj.table[id]["operation"];
-    document.getElementById("mySidenav").appendChild(historyDiv).appendChild(operation);
+    items = document.createElement("p");
+    items.className = "historyItems";
+    items.textContent = index["prev"] + index["operation"] + index["current"] + ' = ';
+    document.getElementById("mySidenav").appendChild(historyDiv).appendChild(items);
 
-    current = document.createElement("p");
-    current.className = "history-current-operand";
-    current.textContent = obj.table[id]["current"];
-    document.getElementById("mySidenav").appendChild(historyDiv).appendChild(current);
+    // prev = document.createElement("p");
+    // prev.className = "history-previous-operand";
+    // prev.textContent = obj.table[id]["prev"];
+    // document.getElementById("mySidenav").appendChild(historyDiv).appendChild(prev);
 
-    equal = document.createElement("p");
-    equal.className = "history-current-operand";
-    equal.textContent = "=";
-    document.getElementById("mySidenav").appendChild(historyDiv).appendChild(equal);
+    // operation = document.createElement("p");
+    // operation.className = "history-operation";
+    // operation.textContent = obj.table[id]["operation"];
+    // document.getElementById("mySidenav").appendChild(historyDiv).appendChild(operation);
 
-    computation = document.createElement("p");
+    // current = document.createElement("p");
+    // current.className = "history-current-operand";
+    // current.textContent = obj.table[id]["current"];
+    // document.getElementById("mySidenav").appendChild(historyDiv).appendChild(current);
+
+    // equal = document.createElement("p");
+    // equal.className = "history-eqaul";
+    // equal.textContent = "=";
+    // document.getElementById("mySidenav").appendChild(historyDiv).appendChild(equal);
+
+    computation = document.createElement("span");
     computation.className = "computation";
     computation.textContent = obj.table[id]["computation"];
-    document.getElementById("mySidenav").appendChild(historyDiv).appendChild(computation);
+    document.getElementById("mySidenav").appendChild(historyDiv).appendChild(items).appendChild(computation);
 
         
     id++;
 }
 
-const historyBtn = document.getElementsByClassName('historyBtn')[0];
 
-historyBtn.addEventListener('click', () => {
-    
-})
  
 
 

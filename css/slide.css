@@ -11,6 +11,18 @@
     transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
     right: 0;
 }
+
+.sidenav::-webkit-scrollbar {
+    width: 0.25rem;
+}
+  
+.sidenav::-webkit-scrollbar-track {
+    background: #fff;
+}
+  
+.sidenav::-webkit-scrollbar-thumb {
+    background: #1e1e24;
+}
   
 /* The navigation menu links */
 .sidenav a {
@@ -37,8 +49,9 @@
 }
 
 .history {
+    padding-left: 1em;
+    width: 100%;
     display: grid;
-    grid-template-columns: repeat(10, 1fr);
 }
 
 .history:hover {
@@ -46,7 +59,6 @@
 }
   
 .history p {
-    padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 25px;
     color: rgba(245, 245, 245, 0.719);

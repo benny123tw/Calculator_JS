@@ -1,7 +1,12 @@
-const width = "500px";
+let width = "50%";
+
+let x = window.matchMedia("(min-width: 550px)");
 
 /* Set the width of the side navigation to 250px and the left margin of the page content to 250px */
 function openNav() {
+
+    if (x.matches) width = "30%";
+    else width = "50%"; 
     document.getElementById("mySidenav").style.width = width;
     //document.getElementById("main").style.marginLeft = width;
 }
